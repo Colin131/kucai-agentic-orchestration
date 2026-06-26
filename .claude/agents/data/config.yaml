@@ -1,7 +1,7 @@
 agent_id: data
 display_name: 数据工程师（SLOT，未 instantiate）
 status: slot
-model: sonnet
+model: opus              # token 充足，默认 opus
 effort: medium
 tools:
   - Read

@@ -123,6 +123,17 @@ CTO --(goal)--> PM
 
 ---
 
+## 模型策略
+
+token 预算充足——**所有 agent 默认 opus**，不为省钱降级（CTO 2026-06-26 定）。各 `config.yaml` 的 `model` 字段已统一为 opus；slot agent instantiate 时同样默认 opus。
+
+`effort` 是独立旋钮，按任务难度调，不跟 model 绑：
+
+- 对抗 / 判断密集（reviewer / retro）→ `high`
+- 实施 / 调研 / 测试（dev / frontend / qa / explore / devops / data）→ `medium`（需要时单任务临时升 `high`）
+
+---
+
 ## Calibration（量化校准）
 
 `state/calibration.json` 累积：
