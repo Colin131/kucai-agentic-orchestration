@@ -9,7 +9,7 @@
 ![powered by Claude Code](https://img.shields.io/badge/powered%20by-Claude%20Code-D97757?style=flat-square)
 ![team](https://img.shields.io/badge/team-6%20active%20%2B%204%20slots-4C9AFF?style=flat-square)
 ![discipline](https://img.shields.io/badge/process%20%E2%89%A0%20outcome-binding-2EA043?style=flat-square)
-![status](https://img.shields.io/badge/v0.1-validated-success?style=flat-square)
+![status](https://img.shields.io/badge/v1.0-validated-success?style=flat-square)
 
 </div>
 
@@ -106,7 +106,7 @@ flowchart LR
 
 ## 实战验证 · Validation
 
-> 模板 v0.1 已完成一次真实任务压测：给一个 macOS 录音 app（外部 repo）加"查看原始转录"功能。
+> 模板 v1.0 已完成一次真实任务压测：给一个 macOS 录音 app（外部 repo）加"查看原始转录"功能。
 
 完整链路跑通：`explore → dev → reviewer → dev → reviewer → dev → PM 终验 → 交付 PR → retro`。cold-context 评审两轮独立发现真问题：
 
@@ -182,7 +182,7 @@ goals/GOAL_TEMPLATE.md           # 派工合同模板
 
 <div align="center">
 
-**v0.1** · 私有 @ Colin131 · 已通过首次真实任务压测
+**v1.0** · 私有 @ Colin131 · 已通过首次真实任务压测
 
 *Built with [Claude Code](https://claude.com/claude-code) · 运营哲学见 [team-operating-model](memory/team-operating-model.md)*
 
