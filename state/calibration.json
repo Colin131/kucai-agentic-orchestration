@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "last_updated": null,
+  "samples": {
+    "estimation_accuracy": {
+      "description": "estimated_hours vs actual_hours, per task",
+      "n": 0,
+      "data": []
+    },
+    "reviewer_severity_vs_qa_outcome": {
+      "description": "reviewer 打的 severity vs qa 实际 outcome（pass/fail）",
+      "n": 0,
+      "data": []
+    },
+    "retro_brier_score": {
+      "description": "PM 派工时给的 confidence vs 实际 ship 与否",
+      "n": 0,
+      "running_brier": null,
+      "data": []
+    }
+  },
+  "notes": "n < 30 不在汇报里宣传任何结论。retro 月底批处理时 update。"
+}

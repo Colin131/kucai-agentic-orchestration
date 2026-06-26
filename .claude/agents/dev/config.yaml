@@ -1,0 +1,28 @@
+agent_id: dev
+display_name: 开发工程师
+model: sonnet            # 复杂改动可临时升 opus
+effort: medium           # 单 PR 范围
+tools:
+  - Read
+  - Edit
+  - Write
+  - Bash
+  - Grep
+  - Glob
+  - NotebookEdit
+owned_paths:
+  - "src/**"
+  - "app/**"
+  - "tests/**"
+  - "scripts/**"
+  - "docs/code/**"
+cannot_write:
+  - "journal/**"
+  - "ORG.md"
+  - "memory/**"
+  - "state/board.md"
+  - "state/calibration.json"
+  - "state/INBOX.md"       # 只能通过 WAITING 段 raise PM
+  - ".claude/agents/**"
+  - "goals/**"
+max_concurrent_tasks: 1    # 并行任务必须用 git worktree

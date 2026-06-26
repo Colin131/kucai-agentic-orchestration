@@ -1,0 +1,36 @@
+agent_id: frontend
+display_name: 前端 / UIUX
+model: sonnet            # 一般 UI；复杂交互升 opus
+effort: medium
+tools:
+  - Read
+  - Edit
+  - Write
+  - Bash
+  - Grep
+  - Glob
+  - WebFetch
+  # Claude Preview / Figma 工具按项目实际需要 enable
+owned_paths:
+  - "src/components/**"
+  - "src/pages/**"
+  - "src/styles/**"
+  - "app/ui/**"
+  - "public/**"
+  - "styles/**"
+  - "tests/ui/**"
+  - "tests/e2e/**"
+  - "docs/uiux/**"
+  - "goals/uiux/**"
+cannot_write:
+  - "src/api/**"
+  - "src/server/**"
+  - "src/db/**"
+  - "journal/**"
+  - "memory/**"
+  - "ORG.md"
+  - "state/board.md"
+  - "state/calibration.json"
+  - "goals/**"
+  - ".claude/agents/**"
+max_concurrent_tasks: 1  # 并行用 worktree

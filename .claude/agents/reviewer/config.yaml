@@ -1,0 +1,27 @@
+agent_id: reviewer
+display_name: 代码评审员
+model: opus              # 评审需要 nuanced 推理 + 对抗思维
+effort: high
+tools:
+  # 显式不给 Edit / Write —— reviewer 不改代码
+  - Read
+  - Grep
+  - Glob
+  - Bash                 # 跑测试、git diff、git log
+owned_paths:
+  - "state/INBOX.md"       # 只 FYI / WAITING 段
+  - "journal/reviews/**"   # review 报告归档
+cannot_write:
+  - "src/**"
+  - "app/**"
+  - "tests/**"
+  - "scripts/**"
+  - "journal/decisions/**"
+  - "journal/post_mortems/**"
+  - "memory/**"
+  - "ORG.md"
+  - "state/board.md"
+  - "state/calibration.json"
+  - "goals/**"
+  - ".claude/agents/**"
+max_concurrent_tasks: 3    # review 是轻 IO 任务，可以并行

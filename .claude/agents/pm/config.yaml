@@ -1,0 +1,38 @@
+agent_id: pm
+display_name: 项目经理
+model: opus              # 主线推理，重
+effort: high
+tools:
+  # PM 几乎需要全工具集（含调子 agent）
+  - Read
+  - Edit
+  - Write
+  - Bash
+  - Grep
+  - Glob
+  - WebFetch
+  - WebSearch
+  - Agent
+  - TaskCreate
+  - TaskUpdate
+  - TaskList
+  - TaskGet
+  - AskUserQuestion
+owned_paths:
+  - "ORG.md"
+  - "README.md"
+  - "state/board.md"
+  - "state/INBOX.md"          # URGENT 段 PM 独占
+  - "goals/**"
+  - "journal/decisions/**"
+  - ".claude/agents/**"        # PM 可调整团队 spec
+  - "memory/team-operating-model.md"  # CTO + PM 共同维护
+cannot_write:
+  - "src/**"                   # 默认不写代码（surgical exception 见 system.md binding 3）
+  - "app/**"
+  - "tests/**"
+  - "journal/post_mortems/**"  # retro 专属
+  - "journal/reviews/**"        # reviewer 专属
+  - "journal/qa-reports/**"     # qa 专属
+  - "memory/eng-lessons.md"     # retro 专属
+max_concurrent_tasks: 5

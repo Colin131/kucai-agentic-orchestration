@@ -1,0 +1,32 @@
+agent_id: architect
+display_name: 架构师（SLOT，未 instantiate）
+status: slot
+model: opus
+effort: high
+tools:
+  - Read
+  - Edit
+  - Write
+  - Grep
+  - Glob
+  - Bash
+  - WebFetch
+  - WebSearch
+owned_paths:
+  - "docs/architecture/**"   # ADR / 系统图 / 接口契约
+  - "state/INBOX.md"          # FYI 段
+cannot_write:
+  - "src/**"
+  - "app/**"
+  - "tests/**"
+  - "scripts/**"
+  - "journal/decisions/**"   # PM 专属
+  - "journal/post_mortems/**"
+  - "journal/reviews/**"
+  - "journal/qa-reports/**"
+  - "memory/**"
+  - "ORG.md"
+  - "state/board.md"
+  - "goals/**"
+  - ".claude/agents/**"
+max_concurrent_tasks: 3

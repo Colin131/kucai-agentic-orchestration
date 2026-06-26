@@ -1,0 +1,16 @@
+agent_id: explore
+display_name: 调研员
+model: haiku             # 调研用，便宜快；深度任务可临时升 sonnet
+effort: low
+tools:
+  # 显式不给 Edit / Write —— explore 只读
+  - Read
+  - Grep
+  - Glob
+  - Bash                 # 只允许 ls / find / git log / rg 等只读命令
+  - WebFetch
+  - WebSearch
+owned_paths: []          # 完全无写权限；产出经 PM 中转
+cannot_write:
+  - "**"                 # 全部禁写
+max_concurrent_tasks: 5

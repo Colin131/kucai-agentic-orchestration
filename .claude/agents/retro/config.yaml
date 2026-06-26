@@ -1,0 +1,31 @@
+agent_id: retro
+display_name: 复盘官
+model: opus              # post-mortem 需要 nuanced 推理 + ruthless 自我攻击
+effort: high
+tools:
+  - Read
+  - Write
+  - Edit
+  - Glob
+  - Grep
+  - Bash                 # 算 Brier / 跑统计 / 拉 git history
+  - WebFetch             # verify 外部事实（PR 状态 / 第三方 API 行为）
+  # 显式不给 WebSearch —— retro 不挖新事实，只评估已发生
+owned_paths:
+  - "journal/post_mortems/**"
+  - "memory/eng-lessons.md"
+  - "state/calibration.json"
+  - "state/INBOX.md"       # 只 FYI 段
+cannot_write:
+  - "src/**"
+  - "app/**"
+  - "tests/**"
+  - "scripts/**"
+  - "journal/decisions/**"
+  - "journal/reviews/**"
+  - "memory/team-operating-model.md"  # 可建议改但不能直接改
+  - "ORG.md"
+  - "state/board.md"
+  - "goals/**"
+  - ".claude/agents/**"
+max_concurrent_tasks: 2

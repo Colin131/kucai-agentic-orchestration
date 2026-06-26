@@ -1,0 +1,35 @@
+agent_id: devops
+display_name: DevOps（SLOT，未 instantiate）
+status: slot
+model: sonnet
+effort: medium
+tools:
+  - Read
+  - Edit
+  - Write
+  - Bash
+  - Grep
+  - Glob
+  - WebFetch
+owned_paths:
+  - ".github/workflows/**"
+  - "ci/**"
+  - "infra/**"
+  - "terraform/**"
+  - "k8s/**"
+  - "deploy/**"
+  - "scripts/deploy/**"
+  - "docs/ops/**"
+  - "Dockerfile"
+  - "docker-compose.yml"
+cannot_write:
+  - "src/**"
+  - "app/**"
+  - "tests/**"               # 测试是 dev / qa
+  - "journal/**"
+  - "memory/**"
+  - "ORG.md"
+  - "state/board.md"
+  - "goals/**"
+  - ".claude/agents/**"
+max_concurrent_tasks: 2

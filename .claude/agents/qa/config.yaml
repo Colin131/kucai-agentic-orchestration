@@ -1,0 +1,33 @@
+agent_id: qa
+display_name: 测试工程师
+model: sonnet            # 一般测试；复杂 bug 复现升 opus
+effort: medium
+tools:
+  - Read
+  - Edit
+  - Write
+  - Bash
+  - Grep
+  - Glob
+  - WebFetch
+  # Claude Preview / computer-use 按项目实际 enable
+owned_paths:
+  - "tests/**"
+  - "tests/e2e/**"
+  - "tests/integration/**"
+  - "tests/regression/**"
+  - "journal/qa-reports/**"
+  - "state/INBOX.md"        # FYI / WAITING 段
+cannot_write:
+  - "src/**"                # qa 只写 tests，不修 src
+  - "app/**"
+  - "journal/decisions/**"
+  - "journal/post_mortems/**"
+  - "journal/reviews/**"
+  - "memory/**"
+  - "ORG.md"
+  - "state/board.md"
+  - "state/calibration.json"
+  - "goals/**"
+  - ".claude/agents/**"
+max_concurrent_tasks: 2
