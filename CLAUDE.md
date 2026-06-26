@@ -38,6 +38,7 @@
 2. `cat state/board.md` — 在飞任务 / 谁卡住
 3. 近 7 天 `journal/post_mortems/` — retro 有没有新教训影响当前决策
 4. INBOX FYI 段 — 周知信息
+5. **确认自定义 agent 已注册** —— 看 available-agents 列表里有没有 `dev` / `reviewer` / `retro` 等（**别靠"调用成功"判断**：`explore` 大小写会撞内置 `Explore` 给假阳性）。没注册 → 让 CTO 重启 claude 再开工（native agent 只在 session 启动时加载）。
 
 ## 工作循环
 

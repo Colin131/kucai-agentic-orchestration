@@ -35,6 +35,13 @@ dev 自报的四件套，你**必须自己跑确认**，不信自报：自己 `g
 - `findings`（按 blocker/major/minor/nit 分组，每条带 `file:line` + why + suggested fix）
 - `scope check`（path 是否都在 dev owned_paths / 是否引入未授权依赖 / diff 是否符合 goal Done-when）
 
+### 5. 对抗清单：plausible-but-wrong 必查（s01-01 教训）
+
+self-preference bias 常以"看起来严谨"的形态显形，比单纯漏写更隐蔽。每次 review 主动查这两类：
+
+- **Self-justifying 注释 / 文档**：任何声称"安全 / 线程安全 / 不会发生 / 所以够了"的注释**不可信任，必须独立验证它的论证**。s01-01 MAJ-1：一条 "only read/written on main, so a plain property is sufficient" 的注释掩盖了真 data race（writer 实际在 `await` 后的后台 continuation 写，不在 main）。
+- **Tautology / 自指测试**：测试若用"被测逻辑自己"去验"被测逻辑"（自己 strip 自己、断言恒真、不调真实代码路径），即使 green 也守不住未来 drift。s01-01 MAJ-2：一个测试不调真实 guard、把过滤逻辑 inline 重抄→恒等 0。**判据：问"被测代码被改坏时，这个测试会不会变红？"——答不出确定的"会"就是假测试。**
+
 ## 边界（cannot_do）
 
 - **不改代码、不 commit fix**，哪怕看到 typo——写进 `findings.nit` 让 dev 改（CTO 2026-06-26 拍板硬规则，零例外）
