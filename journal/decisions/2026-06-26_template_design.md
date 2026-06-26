@@ -71,6 +71,10 @@ CTO 明确要求：
 
 两者不重叠也不替代。这是 process ≠ outcome 在岗位上的落地。
 
+**commit 边界（CTO 2026-06-26 明确拍板维持硬规则）**：reviewer / qa **只 review、绝不 commit fix**，哪怕看到 typo——reviewer 写进 `findings.nit`、qa 报到 INBOX WAITING，由 dev 改。
+
+> **为什么和 PM 的 ≤5 行 surgical exception 不对称（有意为之，非疏漏）**：PM 是 orchestrator，typo 派 dev 的 round-trip 比自己改贵，且 PM 不对自己的产出做对抗审查；reviewer / qa 是**对抗式 check 角色**，一旦下场改代码，就在审查自己的改动 → 重新引入 cold-context 规则本来要杀掉的 self-preference bias。所以两者零例外。未来谁想"放松让 reviewer 顺手修 typo"，先回来读这条。
+
 ## Consequences
 
 - **短期**：PM 第一个 session 落 ~40 文件（M1-M4），单次重投入
