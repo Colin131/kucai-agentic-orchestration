@@ -1,7 +1,7 @@
 agent_id: dev
 display_name: 开发工程师
-model: sonnet            # 复杂改动可临时升 opus
-effort: medium           # 单 PR 范围
+model: opus              # token 充足，默认 opus
+effort: medium           # 单 PR 范围（effort 是独立旋钮，按难度调）
 tools:
   - Read
   - Edit

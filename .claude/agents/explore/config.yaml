@@ -1,7 +1,7 @@
 agent_id: explore
 display_name: 调研员
-model: haiku             # 调研用，便宜快；深度任务可临时升 sonnet
-effort: low
+model: opus              # token 充足，默认 opus
+effort: medium           # 调研深度
 tools:
   # 显式不给 Edit / Write —— explore 只读
   - Read
