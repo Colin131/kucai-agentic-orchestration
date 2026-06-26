@@ -125,7 +125,7 @@ CTO --(goal)--> PM
 
 ## 模型策略
 
-token 预算充足——**所有 agent 默认 opus**，不为省钱降级（CTO 2026-06-26 定）。各 `config.yaml` 的 `model` 字段已统一为 opus；slot agent instantiate 时同样默认 opus。
+token 预算充足——**所有 agent 默认 opus**，不为省钱降级（CTO 2026-06-26 定）。各 agent `.md` frontmatter 的 `model` 已统一为 opus；slot 草稿 instantiate 时同样默认 opus。
 
 `effort` 是独立旋钮，按任务难度调，不跟 model 绑：
 
