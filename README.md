@@ -2,6 +2,8 @@
 
 > 基于 Claude Code 多 agent 编排的**软件项目模板**。fork 到你的项目 repo，第一天就有一队 agent 可调度。
 
+> **➡️ 想把这套编排装进另一个项目？** 让那个项目的 session 读 [BOOTSTRAP.md](BOOTSTRAP.md) —— 一份自包含的 install 指令，照着执行就能在该项目里原样重建（含 native 格式 + 重启注册 + binding 纪律 + 已知坑）。
+
 ## 这是什么
 
 - 一套**预设的 agent 团队**（native Claude Code wiring）：PM（主 session）+ 6 active 子 agent（dev / reviewer / retro / explore / frontend / qa）+ 4 slot 草稿（algo / architect / devops / data）
